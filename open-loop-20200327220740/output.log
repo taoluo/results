@@ -204,3 +204,7 @@ sudo ./open-loop/../scripts/fio ./open-loop/run.fio --filename=/dev/nvme1n1 --ra
 1111111
 sudo ./open-loop/../scripts/fio ./open-loop/run.fio --filename=/dev/nvme1n1 --rate_iops=87500 --numjobs=6 --runtime=5 --ioengine=io_uring --hipri=1 --sqthread_poll=2
 222
+== Engine io_uring Dev /dev/nvme1n1 Jobs 6 TargetIOPS 575000 95833 Polling 2 ==
+1111111
+sudo ./open-loop/../scripts/fio ./open-loop/run.fio --filename=/dev/nvme1n1 --rate_iops=95833 --numjobs=6 --runtime=5 --ioengine=io_uring --hipri=1 --sqthread_poll=2
+222
