@@ -1,0 +1,4 @@
+== Engine io_uring Dev /dev/nvme0n1 Jobs 6 TargetIOPS 500000 83333 Polling 2 ==
+1111111
+./open-loop/run.fio --filename=/dev/nvme0n1 --rate_iops=83333 --numjobs=6 --rumtime=5 --ioengine=io_uring --hipri=1 --sqthread_poll=2
+222
