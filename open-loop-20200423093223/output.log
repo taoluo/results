@@ -1,0 +1,243 @@
+== Engine io_uring Dev /dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1 Jobs 1 TargetIOPS 400000 400000 Polling 0 ==
+sudo ./open-loop/../scripts/fio ./open-loop/run.fio --filename=/dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1 --rate_iops=400000 --numjobs=1 --runtime=10 --ioengine=io_uring --iodepth=128 --file_service_=roundrobin:32
+fio: set debug option parse
+parse    8480  Parsing ini file ./open-loop/run.fio
+parse    8480  [global]
+parse    8480  Parsing section [global]
+parse    8480  
+parse    8480  ioengine=io_uring
+parse    8480  fixedbufs=1
+parse    8480  registerfiles=1
+parse    8480  # hipri=1 # Use polled I/O completions instead of raising in on I/O completion.
+parse    8480  
+parse    8480  thread=1 # Needed for spdk, so use for all for congruence.
+parse    8480  
+parse    8480  ## iodepth=1024 hanging forever for high numjobs
+parse    8480  bs=4096
+parse    8480  direct=1
+parse    8480  
+parse    8480  group_reporting=1
+parse    8480  
+parse    8480  size=128Gi
+parse    8480  
+parse    8480  #lat_percentiles=1
+parse    8480  #percentile_list=50:99:99.9
+parse    8480  # io_submit_mode=offload
+parse    8480  time_based=1
+parse    8480  ramp_time=3
+parse    8480  clocksource=cpu
+parse    8480  #sqthread_poll_idle=1
+parse    8480  rw=randread
+parse    8480  stonewall
+parse    8480  
+parse    8480  [run]
+parse    8480  handle_option=ioengine, ptr=io_uring
+parse    8480  __handle_option=ioengine, type=OPT_STR_STORE, ptr=io_uring
+parse    8480  handle_option=thread, ptr=1
+parse    8480  __handle_option=thread, type=OPT_STR_SET, ptr=1
+parse    8480    ret=0, out=1
+parse    8480  handle_option=bs, ptr=4096
+parse    8480  __handle_option=bs, type=OPT_ULL, ptr=4096
+parse    8480    ret=0, out=4096
+parse    8480  handle_option=direct, ptr=1
+parse    8480  __handle_option=direct, type=OPT_BOOL, ptr=1
+parse    8480    ret=0, out=1
+parse    8480  handle_option=group_reporting, ptr=1
+parse    8480  __handle_option=group_reporting, type=OPT_STR_SET, ptr=1
+parse    8480    ret=0, out=1
+parse    8480  handle_option=size, ptr=128Gi
+parse    8480  __handle_option=size, type=OPT_STR_VAL, ptr=128Gi
+parse    8480    ret=0, out=137438953472
+parse    8480  handle_option=time_based, ptr=1
+parse    8480  __handle_option=time_based, type=OPT_STR_SET, ptr=1
+parse    8480    ret=0, out=1
+parse    8480  handle_option=ramp_time, ptr=3
+parse    8480  __handle_option=ramp_time, type=OPT_STR_VAL_TIME, ptr=3
+parse    8480    ret=0, out=3000000
+parse    8480  handle_option=clocksource, ptr=cpu
+parse    8480  __handle_option=clocksource, type=OPT_STR, ptr=cpu
+parse    8480  handle_option=rw, ptr=randread
+parse    8480  __handle_option=rw, type=OPT_STR, ptr=randread
+parse    8480  handle_option=stonewall, ptr=(null)
+parse    8480  __handle_option=stonewall, type=OPT_STR_SET, ptr=(null)
+parse    8480    ret=0, out=1
+parse    8480  handle_option=fixedbufs, ptr=1
+parse    8480  __handle_option=fixedbufs, type=OPT_STR_SET, ptr=1
+parse    8480    ret=0, out=1
+parse    8480  handle_option=registerfiles, ptr=1
+parse    8480  __handle_option=registerfiles, type=OPT_STR_SET, ptr=1
+parse    8480    ret=0, out=1
+parse    8480  [run]
+parse    8480  Parsing section [run]
+parse    8480  dup options
+parse    8480  
+parse    8480  init options
+parse    8480  dup options
+parse    8480  free options
+parse    8480  free options
+parse    8483  free options
+3;fio-3.19-12-g0f69-dirty;run;0;0;16000060;1599846;399959;10001;1;30;1.776648;0.633410;5;429;50.968809;60.501596;1.000000%=7;5.000000%=8;10.000000%=10;20.000000%=15;30.000000%=20;40.000000%=25;50.000000%=32;60.000000%=39;70.000000%=47;80.000000%=62;90.000000%=104;95.000000%=193;99.000000%=305;99.500000%=309;99.900000%=321;99.950000%=329;99.990000%=342;0%=0;0%=0;0%=0;7;431;52.799849;60.528484;1601160;1603208;100.000000%;1602249.631579;502.481753;0;0;0;0;0;0;0.000000;0.000000;0;0;0.000000;0.000000;1.000000%=0;5.000000%=0;10.000000%=0;20.000000%=0;30.000000%=0;40.000000%=0;50.000000%=0;60.000000%=0;70.000000%=0;80.000000%=0;90.000000%=0;95.000000%=0;99.000000%=0;99.500000%=0;99.900000%=0;99.950000%=0;99.990000%=0;0%=0;0%=0;0%=0;0;0;0.000000;0.000000;0;0;0.000000%;0.000000;0.000000;44.720000%;51.920000%;153568;0;0;3.6%;7.2%;14.3%;27.8%;30.0%;10.4%;6.7%;0.00%;0.00%;9.73%;19.71%;42.81%;16.97%;7.16%;3.61%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;nvme0n1;1278880;0;0;0;9805;0;0;96.54%;nvme1n1;1278880;0;0;0;9817;0;0;96.58%;nvme2n1;1278869;0;0;0;11649;0;0;96.60%;nvme3n1;1278848;0;0;0;10995;0;0;96.60%
+parse    8480  free options
+parse    8480  free options
+== Engine io_uring Dev /dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1 Jobs 1 TargetIOPS 400000 400000 Polling 1 ==
+sudo ./open-loop/../scripts/fio ./open-loop/run.fio --filename=/dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1 --rate_iops=400000 --numjobs=1 --runtime=10 --ioengine=io_uring --iodepth=128 --file_service_=roundrobin:32 --hipri=1
+fio: set debug option parse
+parse    8488  Parsing ini file ./open-loop/run.fio
+parse    8488  [global]
+parse    8488  Parsing section [global]
+parse    8488  
+parse    8488  ioengine=io_uring
+parse    8488  fixedbufs=1
+parse    8488  registerfiles=1
+parse    8488  # hipri=1 # Use polled I/O completions instead of raising in on I/O completion.
+parse    8488  
+parse    8488  thread=1 # Needed for spdk, so use for all for congruence.
+parse    8488  
+parse    8488  ## iodepth=1024 hanging forever for high numjobs
+parse    8488  bs=4096
+parse    8488  direct=1
+parse    8488  
+parse    8488  group_reporting=1
+parse    8488  
+parse    8488  size=128Gi
+parse    8488  
+parse    8488  #lat_percentiles=1
+parse    8488  #percentile_list=50:99:99.9
+parse    8488  # io_submit_mode=offload
+parse    8488  time_based=1
+parse    8488  ramp_time=3
+parse    8488  clocksource=cpu
+parse    8488  #sqthread_poll_idle=1
+parse    8488  rw=randread
+parse    8488  stonewall
+parse    8488  
+parse    8488  [run]
+parse    8488  handle_option=ioengine, ptr=io_uring
+parse    8488  __handle_option=ioengine, type=OPT_STR_STORE, ptr=io_uring
+parse    8488  handle_option=thread, ptr=1
+parse    8488  __handle_option=thread, type=OPT_STR_SET, ptr=1
+parse    8488    ret=0, out=1
+parse    8488  handle_option=bs, ptr=4096
+parse    8488  __handle_option=bs, type=OPT_ULL, ptr=4096
+parse    8488    ret=0, out=4096
+parse    8488  handle_option=direct, ptr=1
+parse    8488  __handle_option=direct, type=OPT_BOOL, ptr=1
+parse    8488    ret=0, out=1
+parse    8488  handle_option=group_reporting, ptr=1
+parse    8488  __handle_option=group_reporting, type=OPT_STR_SET, ptr=1
+parse    8488    ret=0, out=1
+parse    8488  handle_option=size, ptr=128Gi
+parse    8488  __handle_option=size, type=OPT_STR_VAL, ptr=128Gi
+parse    8488    ret=0, out=137438953472
+parse    8488  handle_option=time_based, ptr=1
+parse    8488  __handle_option=time_based, type=OPT_STR_SET, ptr=1
+parse    8488    ret=0, out=1
+parse    8488  handle_option=ramp_time, ptr=3
+parse    8488  __handle_option=ramp_time, type=OPT_STR_VAL_TIME, ptr=3
+parse    8488    ret=0, out=3000000
+parse    8488  handle_option=clocksource, ptr=cpu
+parse    8488  __handle_option=clocksource, type=OPT_STR, ptr=cpu
+parse    8488  handle_option=rw, ptr=randread
+parse    8488  __handle_option=rw, type=OPT_STR, ptr=randread
+parse    8488  handle_option=stonewall, ptr=(null)
+parse    8488  __handle_option=stonewall, type=OPT_STR_SET, ptr=(null)
+parse    8488    ret=0, out=1
+parse    8488  handle_option=fixedbufs, ptr=1
+parse    8488  __handle_option=fixedbufs, type=OPT_STR_SET, ptr=1
+parse    8488    ret=0, out=1
+parse    8488  handle_option=registerfiles, ptr=1
+parse    8488  __handle_option=registerfiles, type=OPT_STR_SET, ptr=1
+parse    8488    ret=0, out=1
+parse    8488  [run]
+parse    8488  Parsing section [run]
+parse    8488  dup options
+parse    8488  
+parse    8488  init options
+parse    8488  dup options
+parse    8488  free options
+parse    8488  free options
+parse    8490  free options
+3;fio-3.19-12-g0f69-dirty;run;0;0;16000024;1599842;399959;10001;1;251;1.220263;0.362474;5;472;11.071159;5.840440;1.000000%=7;5.000000%=7;10.000000%=7;20.000000%=8;30.000000%=8;40.000000%=9;50.000000%=10;60.000000%=10;70.000000%=11;80.000000%=12;90.000000%=14;95.000000%=18;99.000000%=33;99.500000%=40;99.900000%=64;99.950000%=84;99.990000%=195;0%=0;0%=0;0%=0;7;473;12.319468;5.873377;1600152;1602384;100.000000%;1602052.210526;488.577934;0;0;0;0;0;0;0.000000;0.000000;0;0;0.000000;0.000000;1.000000%=0;5.000000%=0;10.000000%=0;20.000000%=0;30.000000%=0;40.000000%=0;50.000000%=0;60.000000%=0;70.000000%=0;80.000000%=0;90.000000%=0;95.000000%=0;99.000000%=0;99.500000%=0;99.900000%=0;99.950000%=0;99.990000%=0;0%=0;0%=0;0%=0;0;0;0.000000;0.000000;0;0;0.000000%;0.000000;0.000000;36.670000%;63.310000%;30;0;0;10.1%;20.2%;40.5%;26.8%;2.1%;0.2%;0.1%;0.00%;0.00%;50.39%;45.44%;3.94%;0.20%;0.03%;0.01%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;nvme0n1;1286656;0;0;0;12665;0;0;97.12%;nvme1n1;1286656;0;0;0;12230;0;0;97.15%;nvme2n1;1286656;0;0;0;14604;0;0;97.18%;nvme3n1;1286644;0;0;0;13893;0;0;97.18%
+parse    8488  free options
+parse    8488  free options
+== Engine io_uring Dev /dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1 Jobs 1 TargetIOPS 400000 400000 Polling 2 ==
+sudo ./open-loop/../scripts/fio ./open-loop/run.fio --filename=/dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1 --rate_iops=400000 --numjobs=1 --runtime=10 --ioengine=io_uring --iodepth=128 --file_service_=roundrobin:32 --hipri=1 --sqthread_poll=2
+fio: set debug option parse
+parse    8496  Parsing ini file ./open-loop/run.fio
+parse    8496  [global]
+parse    8496  Parsing section [global]
+parse    8496  
+parse    8496  ioengine=io_uring
+parse    8496  fixedbufs=1
+parse    8496  registerfiles=1
+parse    8496  # hipri=1 # Use polled I/O completions instead of raising in on I/O completion.
+parse    8496  
+parse    8496  thread=1 # Needed for spdk, so use for all for congruence.
+parse    8496  
+parse    8496  ## iodepth=1024 hanging forever for high numjobs
+parse    8496  bs=4096
+parse    8496  direct=1
+parse    8496  
+parse    8496  group_reporting=1
+parse    8496  
+parse    8496  size=128Gi
+parse    8496  
+parse    8496  #lat_percentiles=1
+parse    8496  #percentile_list=50:99:99.9
+parse    8496  # io_submit_mode=offload
+parse    8496  time_based=1
+parse    8496  ramp_time=3
+parse    8496  clocksource=cpu
+parse    8496  #sqthread_poll_idle=1
+parse    8496  rw=randread
+parse    8496  stonewall
+parse    8496  
+parse    8496  [run]
+parse    8496  handle_option=ioengine, ptr=io_uring
+parse    8496  __handle_option=ioengine, type=OPT_STR_STORE, ptr=io_uring
+parse    8496  handle_option=thread, ptr=1
+parse    8496  __handle_option=thread, type=OPT_STR_SET, ptr=1
+parse    8496    ret=0, out=1
+parse    8496  handle_option=bs, ptr=4096
+parse    8496  __handle_option=bs, type=OPT_ULL, ptr=4096
+parse    8496    ret=0, out=4096
+parse    8496  handle_option=direct, ptr=1
+parse    8496  __handle_option=direct, type=OPT_BOOL, ptr=1
+parse    8496    ret=0, out=1
+parse    8496  handle_option=group_reporting, ptr=1
+parse    8496  __handle_option=group_reporting, type=OPT_STR_SET, ptr=1
+parse    8496    ret=0, out=1
+parse    8496  handle_option=size, ptr=128Gi
+parse    8496  __handle_option=size, type=OPT_STR_VAL, ptr=128Gi
+parse    8496    ret=0, out=137438953472
+parse    8496  handle_option=time_based, ptr=1
+parse    8496  __handle_option=time_based, type=OPT_STR_SET, ptr=1
+parse    8496    ret=0, out=1
+parse    8496  handle_option=ramp_time, ptr=3
+parse    8496  __handle_option=ramp_time, type=OPT_STR_VAL_TIME, ptr=3
+parse    8496    ret=0, out=3000000
+parse    8496  handle_option=clocksource, ptr=cpu
+parse    8496  __handle_option=clocksource, type=OPT_STR, ptr=cpu
+parse    8496  handle_option=rw, ptr=randread
+parse    8496  __handle_option=rw, type=OPT_STR, ptr=randread
+parse    8496  handle_option=stonewall, ptr=(null)
+parse    8496  __handle_option=stonewall, type=OPT_STR_SET, ptr=(null)
+parse    8496    ret=0, out=1
+parse    8496  handle_option=fixedbufs, ptr=1
+parse    8496  __handle_option=fixedbufs, type=OPT_STR_SET, ptr=1
+parse    8496    ret=0, out=1
+parse    8496  handle_option=registerfiles, ptr=1
+parse    8496  __handle_option=registerfiles, type=OPT_STR_SET, ptr=1
+parse    8496    ret=0, out=1
+parse    8496  [run]
+parse    8496  Parsing section [run]
+parse    8496  dup options
+parse    8496  
+parse    8496  init options
+parse    8496  dup options
+parse    8496  free options
+parse    8496  free options
+parse    8498  free options
+3;fio-3.19-12-g0f69-dirty;run;0;0;16000036;1599843;399960;10001;0;0;0.000000;0.000000;6;452;15.187278;5.673137;1.000000%=7;5.000000%=8;10.000000%=9;20.000000%=10;30.000000%=12;40.000000%=13;50.000000%=14;60.000000%=15;70.000000%=17;80.000000%=18;90.000000%=20;95.000000%=23;99.000000%=35;99.500000%=39;99.900000%=50;99.950000%=56;99.990000%=126;0%=0;0%=0;0%=0;6;452;15.224314;5.672414;1600323;1602336;100.000000%;1602081.842105;465.515278;0;0;0;0;0;0;0.000000;0.000000;0;0;0.000000;0.000000;1.000000%=0;5.000000%=0;10.000000%=0;20.000000%=0;30.000000%=0;40.000000%=0;50.000000%=0;60.000000%=0;70.000000%=0;80.000000%=0;90.000000%=0;95.000000%=0;99.000000%=0;99.500000%=0;99.900000%=0;99.950000%=0;99.990000%=0;0%=0;0%=0;0%=0;0;0;0.000000;0.000000;0;0;0.000000%;0.000000;0.000000;100.000000%;0.000000%;31;0;0;10.3%;20.6%;41.2%;26.9%;0.9%;0.1%;0.1%;0.00%;0.00%;13.98%;73.10%;12.80%;0.10%;0.02%;0.01%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;0.00%;nvme0n1;1278176;0;0;0;14979;0;0;96.48%;nvme1n1;1278176;0;0;0;14537;0;0;96.52%;nvme2n1;1278172;0;0;0;16909;0;0;96.54%;nvme3n1;1278148;0;0;0;16461;0;0;96.55%
+parse    8496  free options
+parse    8496  free options
