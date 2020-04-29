@@ -1,0 +1,2 @@
+== Engine libaio Dev /dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1 Jobs 3 TargetIOPS 700000 233333 Polling 0 ==
+sudo ./open-loop/../scripts/fio ./open-loop/run-libaio.fio --filename=/dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1 --rate_iops=233333 --numjobs=3 --runtime=3600 --ioengine=libaio --iodepth=32 --file_service_type=roundrobin:32
