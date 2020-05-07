@@ -1,0 +1,2 @@
+== Engine io_uring Dev 4 Jobs 12 TargetIOPS 100000 8333 Polling 0 ==
+sudo ./open-loop/../scripts/fio ./open-loop/run.fio --filename=/dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1 --rate_iops=8333 --numjobs=12 -runtime=20 --ioengine=io_uring --iodepth=32 --file_service_type=random:32 --hipri=0 --sqthread_poll=0
