@@ -1,0 +1,36 @@
+spdk multiple device
+ normal open loop workload 
+== Engine spdk Dev 4 Jobs 1 TargetIOPS 100000 100000 Polling 0 SqIdleMsec 1000 Workload overlap SyncedJobStart 0 ==
+sudo open-loop/../scripts/fio open-loop/run-spdk.fio --minimal --rate_iops=100000 --numjobs=1 --runtime=3 --ioengine=spdk --iodepth=32 --file_service_type=random:32
+spdk multiple device
+ normal open loop workload 
+== Engine spdk Dev 4 Jobs 1 TargetIOPS 100000 100000 Polling 0 SqIdleMsec 1000 Workload interleave SyncedJobStart 0 ==
+sudo open-loop/../scripts/fio open-loop/run-spdk.fio --minimal --rate_iops=100000 --numjobs=1 --runtime=3 --ioengine=spdk --iodepth=32 --file_service_type=random:32
+spdk multiple device
+ normal open loop workload 
+== Engine spdk Dev 4 Jobs 1 TargetIOPS 100000 100000 Polling 0 SqIdleMsec 1000 Workload unsync SyncedJobStart 0 ==
+sudo open-loop/../scripts/fio open-loop/run-spdk.fio --minimal --rate_iops=100000 --numjobs=1 --runtime=3 --ioengine=spdk --iodepth=32 --file_service_type=random:32
+spdk multiple device
+ normal open loop workload 
+== Engine spdk Dev 4 Jobs 1 TargetIOPS 200000 200000 Polling 0 SqIdleMsec 1000 Workload overlap SyncedJobStart 0 ==
+sudo open-loop/../scripts/fio open-loop/run-spdk.fio --minimal --rate_iops=200000 --numjobs=1 --runtime=3 --ioengine=spdk --iodepth=32 --file_service_type=random:32
+spdk multiple device
+ normal open loop workload 
+== Engine spdk Dev 4 Jobs 1 TargetIOPS 200000 200000 Polling 0 SqIdleMsec 1000 Workload interleave SyncedJobStart 0 ==
+sudo open-loop/../scripts/fio open-loop/run-spdk.fio --minimal --rate_iops=200000 --numjobs=1 --runtime=3 --ioengine=spdk --iodepth=32 --file_service_type=random:32
+spdk multiple device
+ normal open loop workload 
+== Engine spdk Dev 4 Jobs 1 TargetIOPS 200000 200000 Polling 0 SqIdleMsec 1000 Workload unsync SyncedJobStart 0 ==
+sudo open-loop/../scripts/fio open-loop/run-spdk.fio --minimal --rate_iops=200000 --numjobs=1 --runtime=3 --ioengine=spdk --iodepth=32 --file_service_type=random:32
+spdk multiple device
+ normal open loop workload 
+== Engine spdk Dev 4 Jobs 1 TargetIOPS 2800000 2800000 Polling 0 SqIdleMsec 1000 Workload overlap SyncedJobStart 0 ==
+sudo open-loop/../scripts/fio open-loop/run-spdk.fio --minimal --rate_iops=2800000 --numjobs=1 --runtime=3 --ioengine=spdk --iodepth=32 --file_service_type=random:32
+spdk multiple device
+ normal open loop workload 
+== Engine spdk Dev 4 Jobs 1 TargetIOPS 2800000 2800000 Polling 0 SqIdleMsec 1000 Workload interleave SyncedJobStart 0 ==
+sudo open-loop/../scripts/fio open-loop/run-spdk.fio --minimal --rate_iops=2800000 --numjobs=1 --runtime=3 --ioengine=spdk --iodepth=32 --file_service_type=random:32
+spdk multiple device
+ normal open loop workload 
+== Engine spdk Dev 4 Jobs 1 TargetIOPS 2800000 2800000 Polling 0 SqIdleMsec 1000 Workload unsync SyncedJobStart 0 ==
+sudo open-loop/../scripts/fio open-loop/run-spdk.fio --minimal --rate_iops=2800000 --numjobs=1 --runtime=3 --ioengine=spdk --iodepth=32 --file_service_type=random:32
