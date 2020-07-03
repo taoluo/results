@@ -2,3 +2,7 @@
 sudo ./open-loop/../scripts/fio ./open-loop/run.fio --filename=/dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1 --rate_iops=100000 --numjobs=1 -runtime=2 --ioengine=io_uring --iodepth=32 --file_service_type=random:32 --hipri=1 --sqthread_poll=2
 == Engine io_uring Dev 4 Jobs 1 TargetIOPS 2800000 2800000 Polling 2 ==
 sudo ./open-loop/../scripts/fio ./open-loop/run.fio --filename=/dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1 --rate_iops=2800000 --numjobs=1 -runtime=2 --ioengine=io_uring --iodepth=32 --file_service_type=random:32 --hipri=1 --sqthread_poll=2
+== Engine io_uring Dev 4 Jobs 6 TargetIOPS 100000 16666 Polling 2 ==
+sudo ./open-loop/../scripts/fio ./open-loop/run.fio --filename=/dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1 --rate_iops=16666 --numjobs=6 -runtime=2 --ioengine=io_uring --iodepth=32 --file_service_type=random:32 --hipri=1 --sqthread_poll=2
+== Engine io_uring Dev 4 Jobs 6 TargetIOPS 2800000 466666 Polling 2 ==
+sudo ./open-loop/../scripts/fio ./open-loop/run.fio --filename=/dev/nvme0n1:/dev/nvme1n1:/dev/nvme2n1:/dev/nvme3n1 --rate_iops=466666 --numjobs=6 -runtime=2 --ioengine=io_uring --iodepth=32 --file_service_type=random:32 --hipri=1 --sqthread_poll=2
