@@ -1,0 +1,4 @@
+== Engine spdk Dev 4 Jobs 1 TargetIOPS 100000 100000 Polling 0 ==
+sudo ./open-loop/../scripts/fio ./open-loop/run-spdk.fio --rate_iops=100000 --numjobs=1 -runtime=2 --ioengine=spdk --iodepth=32 --file_service_type=random:32
+Starting SPDK v20.07-pre git sha1 16364fdc1 / DPDK 19.11.2 initialization...
+[ DPDK EAL parameters: fio --no-shconf -c 0x1 -m 0 --log-level=lib.eal:6 --log-level=lib.cryptodev:5 --log-level=user1:6 --iova-mode=pa --base-virtaddr=0x200000000000 --match-allocations --file-prefix=spdk_pid19311 ]
