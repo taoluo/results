@@ -1,0 +1,62 @@
+== Engine spdk Dev 1 Jobs 1 TargetIOPS 100000 100000 Polling 0 ==
+sudo ./open-loop/../scripts/fio ./open-loop/run-spdk.fio --rate_iops=100000 --numjobs=1 --runtime=5 --ioengine=spdk --iodepth=32 --file_service_type=random:32
+run: (g=0): rw=randread, bs=(R) 1024B-1024B, (W) 1024B-1024B, (T) 1024B-1024B, ioengine=spdk, iodepth=1024
+fio-3.19
+Starting 1 thread
+Starting SPDK v20.07-pre git sha1 16364fdc1 / DPDK 19.11.2 initialization...
+[ DPDK EAL parameters: fio --no-shconf -c 0x1 -m 0 --log-level=lib.eal:6 --log-level=lib.cryptodev:5 --log-level=user1:6 --iova-mode=pa --base-virtaddr=0x200000000000 --match-allocations --file-prefix=spdk_pid32187 ]
+
+run: (groupid=0, jobs=1): err= 0: pid=32192: Fri Jul 17 19:41:21 2020
+  read: IOPS=99.0k, BW=97.6MiB/s (102MB/s)(488MiB/5001msec)
+    slat (nsec): min=58, max=14795, avg=89.49, stdev=71.68
+    clat (usec): min=2, max=168, avg= 3.16, stdev= 4.98
+     lat (usec): min=2, max=168, avg= 3.25, stdev= 4.98
+    clat percentiles (usec):
+     |  1.00th=[    3],  5.00th=[    3], 10.00th=[    3], 20.00th=[    3],
+     | 30.00th=[    3], 40.00th=[    3], 50.00th=[    3], 60.00th=[    3],
+     | 70.00th=[    3], 80.00th=[    3], 90.00th=[    3], 95.00th=[    4],
+     | 99.00th=[    4], 99.50th=[    5], 99.90th=[  149], 99.95th=[  159],
+     | 99.99th=[  167]
+   bw (  KiB/s): min=100111, max=100122, per=100.00%, avg=100116.78, stdev= 3.67, samples=9
+   iops        : min=100111, max=100122, avg=100116.78, stdev= 3.67, samples=9
+  lat (usec)   : 4=99.45%, 10=0.35%, 20=0.10%, 50=0.01%, 250=0.10%
+  cpu          : usr=99.88%, sys=0.00%, ctx=11, majf=0, minf=0
+  IO depths    : 1=99.6%, 2=0.3%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=0.1%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=500001,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1024
+
+Run status group 0 (all jobs):
+   READ: bw=97.6MiB/s (102MB/s), 97.6MiB/s-97.6MiB/s (102MB/s-102MB/s), io=488MiB (512MB), run=5001-5001msec
+== Engine spdk Dev 1 Jobs 1 TargetIOPS 3000000 3000000 Polling 0 ==
+sudo ./open-loop/../scripts/fio ./open-loop/run-spdk.fio --rate_iops=3000000 --numjobs=1 --runtime=5 --ioengine=spdk --iodepth=32 --file_service_type=random:32
+run: (g=0): rw=randread, bs=(R) 1024B-1024B, (W) 1024B-1024B, (T) 1024B-1024B, ioengine=spdk, iodepth=1024
+fio-3.19
+Starting 1 thread
+Starting SPDK v20.07-pre git sha1 16364fdc1 / DPDK 19.11.2 initialization...
+[ DPDK EAL parameters: fio --no-shconf -c 0x1 -m 0 --log-level=lib.eal:6 --log-level=lib.cryptodev:5 --log-level=user1:6 --iova-mode=pa --base-virtaddr=0x200000000000 --match-allocations --file-prefix=spdk_pid32207 ]
+
+run: (groupid=0, jobs=1): err= 0: pid=32211: Fri Jul 17 19:41:27 2020
+  read: IOPS=1610k, BW=1573MiB/s (1649MB/s)(7865MiB/5001msec)
+    slat (nsec): min=58, max=20336, avg=65.00, stdev=60.50
+    clat (usec): min=105, max=421, avg=317.66, stdev= 6.35
+     lat (usec): min=105, max=421, avg=317.72, stdev= 6.35
+    clat percentiles (usec):
+     |  1.00th=[  314],  5.00th=[  314], 10.00th=[  314], 20.00th=[  314],
+     | 30.00th=[  318], 40.00th=[  318], 50.00th=[  318], 60.00th=[  318],
+     | 70.00th=[  318], 80.00th=[  318], 90.00th=[  318], 95.00th=[  330],
+     | 99.00th=[  347], 99.50th=[  347], 99.90th=[  355], 99.95th=[  367],
+     | 99.99th=[  375]
+   bw (  MiB/s): min= 1569, max= 1577, per=100.00%, avg=1574.64, stdev= 3.13, samples=9
+   iops        : min=1607456, max=1615642, avg=1612426.67, stdev=3208.45, samples=9
+  lat (usec)   : 250=0.01%, 500=99.99%
+  cpu          : usr=99.98%, sys=0.00%, ctx=9, majf=0, minf=0
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=8053943,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1024
+
+Run status group 0 (all jobs):
+   READ: bw=1573MiB/s (1649MB/s), 1573MiB/s-1573MiB/s (1649MB/s-1649MB/s), io=7865MiB (8247MB), run=5001-5001msec
