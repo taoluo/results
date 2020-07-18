@@ -1,0 +1,2 @@
+== Engine spdk Dev 1 Jobs 1 TargetIOPS 100000 100000 Polling 0 ==
+sudo ./open-loop/../scripts/fio ./open-loop/run-spdk.fio --rate_iops=100000 --numjobs=1 --runtime=5 --ioengine=spdk --iodepth=32 --file_service_type=random:32
