@@ -1,0 +1,18 @@
+== Engine io_uring Dev 1 Jobs 1 TargetIOPS 100000 100000 Polling 0 ==
+sudo ./open-loop/../scripts/fio ./open-loop/run.fio --filename=/dev/nvme0n1 --rate_iops=100000 --numjobs=1 --runtime=5 --ioengine=io_uring --iodepth=32 --file_service_type=random:32 --hipri=0 --sqthread_poll=0
+run: (g=0): rw=randread, bs=(R) 512B-512B, (W) 512B-512B, (T) 512B-512B, ioengine=io_uring, iodepth=32
+fio-3.19
+Starting 1 thread
+fio: pid=14976, err=22/file:filesetup.c:713, func=open(/dev/nvme0n1), error=Invalid argument
+
+
+Run status group 0 (all jobs):
+== Engine io_uring Dev 1 Jobs 1 TargetIOPS 3000000 3000000 Polling 0 ==
+sudo ./open-loop/../scripts/fio ./open-loop/run.fio --filename=/dev/nvme0n1 --rate_iops=3000000 --numjobs=1 --runtime=5 --ioengine=io_uring --iodepth=32 --file_service_type=random:32 --hipri=0 --sqthread_poll=0
+run: (g=0): rw=randread, bs=(R) 512B-512B, (W) 512B-512B, (T) 512B-512B, ioengine=io_uring, iodepth=32
+fio-3.19
+Starting 1 thread
+fio: pid=14995, err=22/file:filesetup.c:713, func=open(/dev/nvme0n1), error=Invalid argument
+
+
+Run status group 0 (all jobs):
